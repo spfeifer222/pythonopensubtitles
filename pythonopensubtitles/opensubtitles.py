@@ -1,17 +1,12 @@
-from __future__ import print_function
+#from __future__ import print_function  # not needed?
 from .utils import decompress
 import os
 import os.path
 import sys
 
-try:
-    #Python 2
-    from xmlrpclib import ServerProxy, Transport
-    from settings import Settings
-except ImportError:
-    #Python 3
-    from xmlrpc.client import ServerProxy, Transport
-    from .settings import Settings
+# Python 2 support dropped
+from xmlrpc.client import ServerProxy, Transport
+from .settings import SettingsOrg as Settings
 
 
 class OpenSubtitles(object):
@@ -33,9 +28,8 @@ class OpenSubtitles(object):
             For more information: http://trac.opensubtitles.org/projects/opensubtitles/wiki/DevReadFirst#Howtorequestanewuseragent
         """
         self.language = language or Settings.LANGUAGE
-        self.token = None
         self.user_agent = user_agent or os.getenv('OS_USER_AGENT') or Settings.USER_AGENT
-
+        self.token = None
         transport = Transport()
         transport.user_agent = self.user_agent
 

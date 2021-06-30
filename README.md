@@ -11,13 +11,13 @@ subtitles database. This class is a wrapper for the common methods used by the O
 
 The package is released in pypi, you can simply install it with:
 
-    $ pip install python-opensubtitles
+    $ pip install pythonopensubtitles
 
 ### Dev version
 
 If you want to install the latest version from this repo:
 
-    $ pip install -e git+https://github.com/agonzalezro/python-opensubtitles#egg=python-opensubtitles
+    $ pip install -e git+https://github.com/spfeifer222/pythonopensubtitles#egg=pythonopensubtitles
 
 ## Test
 
@@ -29,7 +29,7 @@ Note: I am using python 3, previous versions might not catch all the tests.
 
 ## Simple usage
 
-**TL;DR;** version to download a subtitle:
+version to download a subtitle:
 
 ```python
 from pythonopensubtitles.opensubtitles import OpenSubtitles
@@ -47,7 +47,7 @@ ost.download_subtitles([id_subtitle_file], output_directory='/tmp', extension='s
 ```
 
 If you want to see more info you can take a look to the old `doctest`s on the
-[APPENDIX.md file](https://github.com/agonzalezro/python-opensubtitles/blob/master/APPENDIX.md).
+[APPENDIX.md file](https://github.com/spfeifer222/pythonopensubtitles/blob/master/APPENDIX.md).
 
 ## Release a new version
 
